@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>classic-newsapp</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="main.js" defer></script>
+  </head>
+  <body>
+    <nav>
+      <div class="navlist container flex">
+        <a href="">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="50"
+            height="50"
+            viewBox="0,0,256,256"
+          >
+            <g
+              fill="#ededed"
+              fill-rule="nonzero"
+              stroke="none"
+              stroke-width="1"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-miterlimit="10"
+              stroke-dasharray=""
+              stroke-dashoffset="0"
+              font-family="none"
+              font-weight="none"
+              font-size="none"
+              text-anchor="none"
+              style="mix-blend-mode: normal"
+            >
+              <g transform="scale(3.55556,3.55556)">
+                <path
+                  d="M49,24c-0.601,0 -13.399,0 -14,0c-1.104,0 -2,0.895 -2,2c0,1.105 0.896,2 2,2c0.601,0 13.399,0 14,0c1.104,0 2,-0.895 2,-2c0,-1.105 -0.896,-2 -2,-2zM49,31c-0.601,0 -13.399,0 -14,0c-1.104,0 -2,0.895 -2,2c0,1.105 0.896,2 2,2c0.601,0 13.399,0 14,0c1.104,0 2,-0.895 2,-2c0,-1.105 -0.896,-2 -2,-2zM49,38c-0.601,0 -1.399,0 -2,0c-1.104,0 -2,0.895 -2,2c0,1.105 0.896,2 2,2c0.601,0 1.399,0 2,0c1.104,0 2,-0.895 2,-2c0,-1.105 -0.896,-2 -2,-2zM49,45c-0.601,0 -1.399,0 -2,0c-1.104,0 -2,0.895 -2,2c0,1.105 0.896,2 2,2c0.601,0 1.399,0 2,0c1.104,0 2,-0.895 2,-2c0,-1.105 -0.896,-2 -2,-2zM40,38h-5c-1.104,0 -2,0.895 -2,2v7c0,1.105 0.896,2 2,2h5c1.104,0 2,-0.895 2,-2v-7c0,-1.105 -0.896,-2 -2,-2zM57,12c3.314,0 6,2.686 6,6v32c0,5.523 -4.477,10 -10,10h-33.083c0.685,-1.178 1.083,-2.542 1.083,-4v-38c0,-3.314 2.686,-6 6,-6zM17,25v31c0,2.206 -1.794,4 -4,4c-2.206,0 -4,-1.794 -4,-4v-25c0,-3.314 2.686,-6 6,-6z"
+                ></path>
+              </g>
+            </g>
+          </svg>
+        </a>
+        <div class="links">
+          <ul class="flex">
+            <li id="Politics" onclick="onNavClick('politics')">Politics</li>
+            <li id="Sports" onclick="onNavClick('sports')">Sports</li>
+            <li id="Finance" onclick="onNavClick('finance')">Finance</li>
+            <li id="Entertainment" onclick='onNavClick("Entertainment")'>Entertainment</li>
+          </ul>
+          
+        </div>
+        <div class="search">
+          <input type="text" class="news-input" placeholder="eg. Parliament" />
+          <button class="button">Search</button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="card-container container flex" id="card-container"></div>
+    </main>
+
+    <template id="news-card">
+      <div class="card">
+        <div class="card-img">
+          <img
+            id="img"
+            src="https://placehold.co/310x300"
+            alt="news-img"
+            srcset=""
+          />
+        </div>
+        <div class="card-content">
+          <h3 id="news-title">This is heading</h3>
+          <h6 id="news-source">Source</h6>
+          <p id="description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio in,
+            eaque suscipit at accusamus autem explicabo possimus cupiditate,
+            repellendus accusantium consectetur eveniet minus aspernatur ipsum
+            perspiciatis quisquam deleniti eum nemo?
+          </p>
+          <button id="link" class="show-more" href="">Read more</button>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>
