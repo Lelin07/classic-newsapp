@@ -1,12 +1,22 @@
-let newsTopic = "bitcoin";
+let newsTopic = "news";
 const API_KEY = "9c3156037405420ca0a8d1b53bc3bd41"; // This is a public key, don't use it in production
+
+let date = new Date();
+let formattedDate = `${date.getFullYear()}-${(
+  "0" +
+  (date.getMonth() + 1)
+).slice(-2)}-${("0" + date.getDate()).slice(-2)-1}`;
+console.log(formattedDate);
+
+const API_URL = `https://newsapi.org/v2/everything?q=${newsTopic}&from=${formattedDate}&sortBy=publishedAt&apiKey=${API_KEY}`;
 
 // Function to fetch news data based on a given topic
 async function newsFetch(topic) {
-  const API_URL = `https://newsapi.org/v2/everything?q=${topic}&from=2024-02-23&sortBy=publishedAt&apiKey=${API_KEY}`;
+  const API_URL = `https://newsapi.org/v2/everything?q=${topic}&from=${formattedDate}&sortBy=publishedAt&apiKey=${API_KEY}`;
   try {
     const res = await fetch(API_URL);
     const data = await res.json();
+    console.log(`data is`, data);
     bindData(data.articles); // Bind the fetched data to the UI
   } catch (error) {
     console.error(error);
@@ -55,7 +65,7 @@ const onNavClick = (topic) => {
   console.log(topic);
 };
 
-const navItems = ['Politics', 'Sports', 'Finance', 'Entertainment'];
+const navItems = ["Politics", "Sports", "Finance", "Entertainment"];
 
 // Add click event listeners to navigation items
 navItems.forEach((item) => {
